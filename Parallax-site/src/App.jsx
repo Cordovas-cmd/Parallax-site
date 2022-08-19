@@ -22,7 +22,10 @@ function App() {
            backgroundImage: `url(${moon})`,
            backgrounSize: 'cover',
           }} />
-
+<ParallaxLayer 
+sticky={{start: 0.9, end: 3.5}}>
+  <img src={cat}/>
+</ParallaxLayer>
 <ParallaxLayer 
           offset={2}
           speed={1}
