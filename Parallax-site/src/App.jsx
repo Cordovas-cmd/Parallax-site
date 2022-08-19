@@ -8,11 +8,11 @@ import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 
 function App() {
   // const [count, setCount] = useState(0)
-// const ref =useRef();
+const ref =useRef();
   return (
     <div>
 
-<Parallax pages={4}>
+<Parallax pages={4} ref={ref}>
 
 <ParallaxLayer 
           offset={0}
@@ -22,10 +22,14 @@ function App() {
            backgroundImage: `url(${moon})`,
            backgrounSize: 'cover',
           }} />
+
+
 <ParallaxLayer 
 sticky={{start: 0.9, end: 3.5}}>
   <img src={cat}/>
 </ParallaxLayer>
+
+
 <ParallaxLayer 
           offset={2}
           speed={1}
@@ -37,13 +41,17 @@ sticky={{start: 0.9, end: 3.5}}>
 
      <ParallaxLayer 
      offest={0.2}
-     speed={0.5}>
+     speed={0.5}
+     onClick={() => ref.current.scrollTo(3)}>
             <h2>Welcome to my website</h2>
             
         </ParallaxLayer>
        
 
-        <ParallaxLayer offset={3.2} speed={0.5}>
+        <ParallaxLayer 
+        offset={3.2} 
+        speed={2}
+        onClick={() => ref.current.scrollTo(0)}>
             <h2>Web development is fun!</h2>
         </ParallaxLayer>
 </Parallax>
