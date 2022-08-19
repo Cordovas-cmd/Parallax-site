@@ -8,16 +8,39 @@ import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 
 function App() {
   // const [count, setCount] = useState(0)
-const ref =useRef();
+// const ref =useRef();
   return (
     <div>
 
-<Parallax pages={4} ref={ref}>
-     <ParallaxLayer speed={1}>
-            <h2>Welcome to my website</h2>
-        </ParallaxLayer>
+<Parallax pages={4}>
 
-        <ParallaxLayer offset={1} speed={0.5}>
+<ParallaxLayer 
+          offset={0}
+          speed={1}
+          factor={2}
+          style={{
+           backgroundImage: `url(${moon})`,
+           backgrounSize: 'cover',
+          }} />
+
+<ParallaxLayer 
+          offset={2}
+          speed={1}
+          factor={4}
+          style={{
+           backgroundImage: `url(${land})`,
+           backgrounSize: 'cover',
+          }}></ParallaxLayer>
+
+     <ParallaxLayer 
+     offest={0.2}
+     speed={0.5}>
+            <h2>Welcome to my website</h2>
+            
+        </ParallaxLayer>
+       
+
+        <ParallaxLayer offset={3.2} speed={0.5}>
             <h2>Web development is fun!</h2>
         </ParallaxLayer>
 </Parallax>
@@ -45,7 +68,7 @@ const ref =useRef();
       </p> */}
   {/* </div> */}
     </div>
-  )
+  );
 }
 
 export default App
